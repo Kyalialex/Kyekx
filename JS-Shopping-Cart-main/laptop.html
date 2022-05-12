@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link type="text/css" href="CSS/main.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous"
+        />
+        <script src="JS/jquery-3.5.1.min.js"></script>
+        <script src="JS/multislider.min.js"></script>
+        <title>Demo</title>
+    </head>
+
+    <body>
+        <!--Navbar-->
+        <nav>
+            <!--Navbar has two part the top one and the bottom one-->
+            <!--Here is top one and in this part I put logo, my account part, and the shopping cart-->
+            <div class="navbar-top">
+                <div>
+                    <button id="menuButton"><i class="fas fa-bars"></i></button>
+                    <!--Logo-->
+                    <a href="index.html">
+                        <h2 class="logo">Kyekx Stores</h2>
+                    </a>
+                </div>
+                <div>
+                    <!--My account part-->
+                    <div class="account">
+                        <a href="index.html">
+                            <button class="account-btn">
+                                <i class="fas fa-user-alt"></i>
+                            </button>
+                            <span class="account-text">My account</span>
+                        </a>
+                        <!--When we click the btnShowAccountInfo this section will be displayed-->
+                    </div>
+                    <!--Shopping cart-->
+                    <div class="shopping-cart">
+                        <div class="sum-prices">
+                            <!--Shopping cart logo-->
+                            <i
+                                class="fas fa-shopping-cart shoppingCartButton"
+                            ></i>
+                            <!--The total prices of products in the shopping cart -->
+                            <h6 id="sum-prices"></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar bottom part -->
+            <!-- Here I put the links to the other pages or nav links -->
+            <div class="navbar" id="navbar">
+                <div class="links">
+                    <ul>
+                        <li class="nav-links">
+                            <a href="mobil.html" class="link">Laptops</a>
+                        </li>
+                        <li class="nav-links">
+                            <a href="mobil.html" class="link">Mobile Phones</a>
+                        </li>
+                        <li class="nav-links">
+                            <a href="mobil.html" class="link">Gaming</a>
+                        </li>
+                        
+                        <li class="nav-links">
+                            <a href="#" class="link">Sound</a>
+                        </li>
+                        <li class="nav-links">
+                            <a href="#" class="link">About</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- The searchbar which will be in the right side of the links -->
+                <div class="searchbar">
+                    <form action="#">
+                        <input type="search" placeholder="Search for Items" />
+                        <i class="fa fa-search" id="search-icon"></i>
+                    </form>
+                </div>
+            </div>
+            <div class="producstOnCart hide">
+                <div class="overlay"></div>
+                <div class="top">
+                    <button id="closeButton">
+                        <i class="fas fa-times-circle"></i>
+                    </button>
+                    <h3>Cart</h3>
+                </div>
+                <ul id="buyItems">
+                    <h4 class="empty">Your shopping cart is empty</h4>
+                    <!-- <li class="buyItem">
+						<img src="Images/producs-images/Mobiles/galaxynote10.png">
+						<div>
+							<h5>Products Name</h5>
+							<h6>$199</h6>
+							<div>
+								<button>-</button>
+								<span class="countOfProduct">1</span>
+								<button>+</button>
+							</div>
+						</div>
+					</li> -->
+                </ul>
+                <button class="btn checkout hidden">Check out</button>
+            </div>
+        </nav>
+        
+        <main>
+            <section class="main-section">
+                <div class="product-container">
+                    <h3>Student laptops</h3>
+                    <div class="products">
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="https://images.pcliquidations.com/images/isaac/93/93630t550.jpg"
+                                        alt="popular laptops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="1"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >Buy Now</a
+                                        >
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">HP Elitebook 820 G1 Laptop</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                       Intel core i3, 4 GB RAM, 500 GB Storage
+                                       
+                                    </p>
+                                    <h6 class="price">
+                                        Ksh<span class="priceValue"> 25,000</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="https://zurimall.co.ke/wp-content/uploads/2021/08/Artboard-1-1-13.jpg"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="2"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >Buy Now</a
+                                        >
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">HP Elitebook 820</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        Intel core i7, 8 GB RAM 500 GB Storage
+                                    </p>
+                                    <h6 class="price">
+                                        Ksh<span class="priceValue"> 34,999</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="https://resetsystems.in/wp-content/uploads/2019/08/Ban-Laptop-Dell-Latitude-E7450-Xach-Tay-Gia-Re-Cho-Sinh-Vien-Cau-Hinh-Core-i5-i7-Ram-4Gb-8Gb-16Gb-O-Cung-HDD-SSD-128Gb-256Gb-320Gb-500Gb-1000Gb-Card-Man-Hinh-VGA-intel-hd-g-e1592583024774.png"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="3"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >Buy Now</a
+                                        >
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">Dell Latitude E7450</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                         Intel core i5, 8 GB RAM 500 GB Storage
+                                    </p>
+                                    <h6 class="price">
+                                        Ksh<span class="priceValue"> 31,999</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="https://latalata.ng/image/cache/catalog/Product%20images/Kaybec/laptop/--7400-700x700.jpg"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="4"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >Buy Now</a
+                                        >
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">Dell latitude 7400</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        Intel core i7,8th Generation, 8 GB RAM 256 SSD
+                                    </p>
+                                    <h6 class="price">
+                                        Ksh<span class="priceValue"> 75,000</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="https://thumbor.forbes.com/thumbor/711x474/https://specials-images.forbesimg.com/imageserve/5fd00ea644cd62376ce2b6c1/In-this-photo-illustration-a-13inch-Macbook-pro-seen---/960x0.jpg?fit=scale"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="5"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >Buy Now</a
+                                        >
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">Apple MacBook pro</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        Intel core i7, 16 GB RAM 512 SSD
+                                    </p>
+                                    <h6 class="price">
+                                        Ksh<span class="priceValue"> 290,000</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="https://www.notebookcheck.net/uploads/tx_nbc2/AcerSpin3-SP315-51__1__03.JPG"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="6"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >Buy Now</a
+                                        >
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">Aspire Acer spin 3</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        Intel core i5,4 GB RAM I TB SSD
+                                    </p>
+                                    <h6 class="price">
+                                        Ksh<span class="priceValue"> 71,999</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="https://images.yaoota.com/yZnsOnq-eOLcngeK7RhdJSMqRn0=/trim/yaootaweb-production-ke/media/crawledproductimages/511cea11bd28cfcdbf651a3a66e4d16a234b7d51.jpg"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="7"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >Buy Now</a
+                                        >
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">Lenovo IDEAPAD 130 141KB</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        Intel core i3,4 GB RAM  1 TB SSD
+                                    </p>
+                                    <h6 class="price">
+                                        Ksh<span class="priceValue"> 38,999</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="https://5.imimg.com/data5/MK/FO/MY-45186220/asus-laptop-500x500.jpg"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="8"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >Buy Now</a
+                                        >
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">Asus X441M</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        Intel Celeron N4000,4 GB RAM 500 HDD
+                                    </p>
+                                    <h6 class="price">
+                                        Ksh<span class="priceValue"> 29,999</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+           
+        
+        <script src="JS/script.js"></script>
+        <script src="shopping-cart.js"></script>
+    </body>
+</html>
